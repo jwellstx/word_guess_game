@@ -8,5 +8,6 @@ This project is another version of a word guessing game except without the webpa
 
 ## Instructions
 1. Checkout the code locally to get access to `index.js`
-1. Launch node using `node index.js`
+1. Install necessary packages using `npm i`
+1. Launch application using `node index.js`
 1. That's it! Enjoy guessing different car brands!
