@@ -1,0 +1,22 @@
+{
+  "name": "word_guess_game",
+  "version": "1.0.0",
+  "description": "word guessing game using node packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwellstx/word_guess_game.git"
+  },
+  "author": "jwellstx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwellstx/word_guess_game/issues"
+  },
+  "homepage": "https://github.com/jwellstx/word_guess_game#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}

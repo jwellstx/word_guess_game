@@ -5,8 +5,6 @@ var inquirer = require("inquirer");
 var brandsOfCars = ['dodge', 'chevy', 'ford', 'bmw', 'porsche', 'toyota', 'alfa romero',
     'mercedes-benz', 'rolls-royce', 'bentley', 'land rover', 'genesis', 'maserati'].sort(() => Math.random() - 0.5);
 
-var brandsOfCars = ['dodge', 'ford', 'bmw'].sort(() => Math.random() - 0.5);
-
 var index = 0;
 var numOfGuesses = 10;
 var numOfWins = 0;
