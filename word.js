@@ -3,47 +3,30 @@
 
 var Letter = require("./letter.js");
 
-var Word = function(word) {
+var Word = function (word) {
     this.brand = word;
     this.letterObjs = []
-    this.letters = word.split('').forEach(c => {this.letterObjs.push(new Letter(c))});
+    // Array full of letter objects
+    this.letters = word.split('').forEach(c => { this.letterObjs.push(new Letter(c)) });
+    // Diplay current word with letters and underscores
     this.displayWord = () => {
-        // check if letter is guess here
+        // Check which letters have been guessed and display the results
         var word = "";
-
         for (var x = 0; x < this.letterObjs.length; x++) {
             word += this.letterObjs[x].checkIfGuessed() + " ";
         }
         return word;
     }
+    // Given a new character, check all letter objects and see if its a valid guess
     this.checkNewLetter = (newLetter) => {
-        // check each letter against new guess
         var found = false;
-
-        if (newLetter.length === 1 && newLetter.match(/[a-z\s]/i)){
-            this.letterObjs.forEach(element => {
-                var flag = element.checkNewGuess(newLetter);
-                if (!found && flag) {found = true;}
-            })
-            return found ? true : false;
-        }
-        else {
-            return 3;
-        }
+        this.letterObjs.forEach(element => {
+            var flag = element.checkNewGuess(newLetter);
+            if (flag) { found = true; }
+        })
+        // This will return to index.js if the guess was valid or not
+        return found ? true : false;
     }
 }
 
 module.exports = Word;
-
-// var test = new Word("ruf   fio");
-// test.displayWord();
-// test.checkNewLetter("f");
-// test.displayWord();
-// test.checkNewLetter("r");
-// test.displayWord();
-// test.checkNewLetter("i");
-// test.displayWord();
-// test.checkNewLetter("u");
-// test.displayWord();
-// test.checkNewLetter("o");
-// test.displayWord();
